@@ -76,7 +76,8 @@ function ChatBody({ socket }) {
 
   const handleLeaveChat = e => {
     e.preventDefault()
-    socket.emit('leaveChat', {})
+    window.localStorage.removeItem('current-user')
+    navigate('/')
   }
 
   return (

@@ -28,11 +28,6 @@ socketIO.on('connection', socket => {
     socketIO.emit('newMessageResponse', message)
   })
 
-  socket.on('leaveChat', data => {
-    users = users.filter(user => user.socketID !== socket.id)
-    socketIO.emit("leaveChatResponse", users)
-  });
-
   socket.on('disconnect', () => {
     users = users.filter(user => user.socketID !== socket.id)
     socketIO.emit("newUserResponse", users)

@@ -23,13 +23,6 @@ function ChatBar({ socket }) {
     socket.on('newUserResponse', users => {
       setUsers(users)
     })
-
-    socket.on('leaveChatResponse', users => {
-      setUsers(users)
-      console.log( users )
-      window.localStorage.removeItem('current-user')
-      navigate('/')
-    })
   }, [ socket, users ])
   
   return (
