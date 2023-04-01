@@ -74,7 +74,10 @@ function ChatBody({ socket }) {
 
   // Temporaly
 
-  const handleLeaveChat = () => socket.emit('leaveChat', {})
+  const handleLeaveChat = e => {
+    e.preventDefault()
+    socket.emit('leaveChat', {})
+  }
 
   return (
     <ChatBodyStyled>
