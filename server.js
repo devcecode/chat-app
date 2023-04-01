@@ -27,6 +27,19 @@ socketIO.on('connection', socket => {
   socket.on('newMessage', message => {
     socketIO.emit('newMessageResponse', message)
   })
+
+  socket.on('disconnect', () => {
+    users = users.filter(user => user.socketID !== socket.id)
+    socketIO.emit("newUserResponse", users)
+    socket.disconnect()
+  });
+
+  // Temporaly
+
+  socket.on('removeUsers', messageInput => {
+    users = []
+    socketIO.emit("removeUsersResponse", users)
+  });
 })
 
 app.use(express.static(staticFiles))

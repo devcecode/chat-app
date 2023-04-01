@@ -72,10 +72,20 @@ function ChatBody({ socket }) {
     lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Temporaly
+
   const handleLeaveChat = () => {
-    window.localStorage.removeItem('current-user')
-    navigate('/')
+    socket.emit('removeUsers', messageInput)
   }
+
+  // Temporaly
+  
+  useEffect(() => {
+    socket.on('removeUsersResponse', users => {
+      window.localStorage.removeItem('current-user')
+      navigate('/')
+    })
+  }, [ socket ])
 
   return (
     <ChatBodyStyled>
