@@ -5,7 +5,7 @@ import { ContextData } from './context/ContextProvider.js'
 import { GlobalStyles } from './global-styles/GlobalStyles.js'
 
 import socketIO from 'socket.io-client'
-const socket = socketIO.connect('http://localhost:8080')
+const socket = socketIO.connect('https://devce-chat-app.up.railway.app/')
 
 import Home from './components/home/Home.js'
 import ChatPage from './components/chat-page/ChatPage.js'
