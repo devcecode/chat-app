@@ -74,11 +74,7 @@ function ChatBody({ socket }) {
 
   // Temporaly
 
-  const handleLeaveChat = () => {
-    window.localStorage.removeItem('current-user')
-    navigate('/')
-    // socket.emit('leaveChat', {})
-  }
+  const handleLeaveChat = () => socket.emit('leaveChat', {})
 
   return (
     <ChatBodyStyled>
