@@ -25,7 +25,7 @@ function ChatBar({ socket }) {
   // Temporaly
   
   useEffect(() => {
-    socket.on('removeUsersResponse', users => {
+    socket.on('disconnectResponse', users => {
       setUsers(users)
       window.localStorage.removeItem('current-user')
       navigate('/')

@@ -30,15 +30,8 @@ socketIO.on('connection', socket => {
 
   socket.on('disconnect', () => {
     users = users.filter(user => user.socketID !== socket.id)
-    socketIO.emit("newUserResponse", users)
+    socketIO.emit("disconnectResponse", users)
     socket.disconnect()
-  });
-
-  // Temporaly
-
-  socket.on('removeUsers', messageInput => {
-    users = []
-    socketIO.emit("removeUsersResponse", users)
   });
 })
 
