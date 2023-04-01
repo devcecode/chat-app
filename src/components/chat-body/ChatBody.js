@@ -75,7 +75,7 @@ function ChatBody({ socket }) {
   // Temporaly
 
   const handleLeaveChat = () => {
-    socket.emit('disconnect', {})
+    socket.emit('leaveChat', {})
   }
 
   return (
