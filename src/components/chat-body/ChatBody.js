@@ -78,14 +78,7 @@ function ChatBody({ socket }) {
     socket.emit('removeUsers', messageInput)
   }
 
-  // Temporaly
   
-  useEffect(() => {
-    socket.on('removeUsersResponse', users => {
-      window.localStorage.removeItem('current-user')
-      navigate('/')
-    })
-  }, [ socket ])
 
   return (
     <ChatBodyStyled>

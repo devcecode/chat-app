@@ -21,6 +21,16 @@ function ChatBar({ socket }) {
       setUsers(users)
     })
   }, [ socket, users ])
+
+  // Temporaly
+  
+  useEffect(() => {
+    socket.on('removeUsersResponse', users => {
+      setUsers(users)
+      window.localStorage.removeItem('current-user')
+      navigate('/')
+    })
+  }, [ socket, users ])
   
   return (
     <ChatBarStyled 
