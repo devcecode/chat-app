@@ -25,16 +25,15 @@ function ChatBar({ socket }) {
     })
   }, [ socket, users ])
 
-  // Temporaly
-  
-  useEffect(() => {
-    socket.on('leaveChatResponse', users => {
-      setUsers(users)
-      console.log( users )
-      window.localStorage.removeItem('current-user')
-      navigate('/')
-    })
-  }, [ socket, users ])
+    
+  // useEffect(() => {
+  //   socket.on('leaveChatResponse', users => {
+  //     setUsers(users)
+  //     console.log( users )
+  //     window.localStorage.removeItem('current-user')
+  //     navigate('/')
+  //   })
+  // }, [ socket, users ])
   
   return (
     <ChatBarStyled 
