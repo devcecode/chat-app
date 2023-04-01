@@ -61,7 +61,7 @@ padding: 0 1em;
 padding: .5em;
 padding-left: 0;
 font-family: 'Product Sans';
-`,Pr=function({socket:e}){const{theme:n}=(0,t.useContext)(i),[r,o]=(0,t.useState)([]);return(0,t.useEffect)((()=>{e.on("newUserResponse",(e=>{o(e)}))}),[e,r]),(0,t.useEffect)((()=>{e.on("disconnectResponse",(e=>{o(e),window.localStorage.removeItem("current-user"),navigate("/")}))}),[e,r]),t.createElement(xr,{border:n.primaryBorder,background:n.primaryBackground},t.createElement(Er,null,t.createElement(Sr,null),t.createElement("h3",{style:{marginBottom:"1em",fontFamily:"Product Sans",fontSize:"1em"}},"ACTIVE USERS"),t.createElement(Cr,null,r.length>0&&r.map(((e,n)=>t.createElement(_r,{key:n},e.userName))))))},Tr=Qt.div`
+`,Pr=function({socket:e}){const n=ee(),{theme:r}=(0,t.useContext)(i),[o,a]=(0,t.useState)([]);return(0,t.useEffect)((()=>{e.on("newUserResponse",(e=>{a(e)}))}),[e,o]),(0,t.useEffect)((()=>{e.on("disconnectResponse",(e=>{a(e),window.localStorage.removeItem("current-user"),n("/")}))}),[e,o]),t.createElement(xr,{border:r.primaryBorder,background:r.primaryBackground},t.createElement(Er,null,t.createElement(Sr,null),t.createElement("h3",{style:{marginBottom:"1em",fontFamily:"Product Sans",fontSize:"1em"}},"ACTIVE USERS"),t.createElement(Cr,null,o.length>0&&o.map(((e,n)=>t.createElement(_r,{key:n},e.userName))))))},Tr=Qt.div`
 flex: 1;
 margin-left: 2px;
 `,Rr=Qt.div``,Nr=Qt.div`

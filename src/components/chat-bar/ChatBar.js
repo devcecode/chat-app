@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { ContextData } from '../../context/ContextProvider.js'
 
@@ -11,6 +12,8 @@ import {
 } from './styles/chat-bar.js'
 
 function ChatBar({ socket }) {
+
+  const navigate = useNavigate()
 
   const { theme } = useContext(ContextData)
 
