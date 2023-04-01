@@ -4,7 +4,7 @@ import { Server } from 'socket.io'
 import path from 'path'
 
 const app = express()
-const port = process.env.port || 8080
+const port = 8080
 const staticFiles = `${path.resolve()}/build`
 const users = []
 
