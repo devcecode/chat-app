@@ -1,7 +1,10 @@
 import express from 'express'
+import dotenv from 'dotenv'
 import { Server as httpServer } from 'http'
 import { Server } from 'socket.io'
 import path from 'path'
+
+dotenv.config()
 
 const app = express()
 const port = 8080
